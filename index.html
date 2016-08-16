@@ -2,10 +2,22 @@
 <html>
   <head>
     <title>Sample App</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
   </head>
   <body>
     <div id='root'>
     </div>
+    <div id='root-2'>
+      <div>Regualar DOM onChange:</div>
+      <input type="text" onchange="onChange()">
+    </div>
     <script src="/static/bundle.js"></script>
+    <script>
+      function onChange(e) {
+        var change = document.createElement("div")
+        change.appendChild(document.createTextNode("onChange fired"));
+        document.getElementById('root-2').appendChild(change);
+      }
+    </script>
   </body>
 </html>
